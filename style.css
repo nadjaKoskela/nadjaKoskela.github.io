@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+/* global styling */
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+  font-size: 3em;
+  margin: 2em auto;
+  text-align: center;
+}
+
+p {
+  margin: 1em auto;
+  text-align: center;
+}
+
+/*sections styling*/
+
+header {
+  background-color: #3c1053ff;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ececec;
+}
+
+header p {
+  font-size: 1.5em;
+  margin: 0 2em 2em 2em;
+}
+
+main {
+  background-color: #ececec;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #000000;
+}
+
+main p {
+  color: black;
+}
+
+footer {
+  background-color: #3c1053ff;
+  padding: 2em;
+  color: #a2a2a1ff;
+}
+
+/* blocks styling */
+
+.guess-number {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#instructions {
+  font-size: 1.5em;
+}
+
+.number-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.receive-feedback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.counter-element {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#counter {
+  width: 2em;
+  font-size: 2em;
+  text-align: right;
+  margin: 1em;
+}
+
+/* interactive elements styling*/
+
+.choose-difficulty {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 1em auto;
+}
+
+.radio-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: auto 1em;
+}
+
+input[type='radio'] {
+  width: 3em;
+  height: 1.5em;
+}
+
+input[type='number'] {
+  height: 3em;
+  width: 10em;
+  padding: 0;
+  font-size: 1em;
+  border-radius: 1em;
+  text-align: center;
+}
+
+input::-webkit-outer-spin-button,
+::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+button {
+  padding: 0.8em 1.6em;
+  border-radius: 2em;
+  border-style: solid;
+  font-size: 1em;
+  font-weight: 600;
+  margin: 2em;
+}
+
+.button-grey {
+  background-color: #ececec;
+  border-color: #ececec;
+  color: #3c1053ff;
+}
+
+.button-grey:hover {
+  background-color: #3c1053ff;
+  color: #ececec;
+}
+
+.button-purple {
+  background-color: #3c1053ff;
+  border-color: #3c1053ff;
+  color: #ececec;
+}
+
+.button-purple:hover {
+  background-color: transparent;
+  color: #3c1053ff;
+}
+
+.button-purple:disabled {
+  background-color: transparent;
+  color: #765786;
+}
+
+.button-lightpurple {
+  background-color: #765786;
+  border-color: #765786;
+  color: #ececec;
+}
+
+.button-lightpurple:hover {
+  background-color: transparent;
+  color: #765786;
+}
+
+@media screen and (max-width: 30em) {
+  /* global styling */
+  h1 {
+    font-size: 2.3em;
+    margin: 1em auto 0 auto;
+    text-align: center;
+  }
+
+  p {
+    margin: 1em auto;
+    text-align: center;
+  }
+
+  /* section styling */
+
+  header {
+    padding: 1em;
+  }
+
+  header p {
+    margin: 2em;
+  }
+
+  main {
+    padding: 1em;
+  }
+
+  footer {
+    padding: 1em;
+  }
+
+  /* interactive elements styling */
+
+  .choose-difficulty {
+    display: flex;
+    flex-direction: column;
+    margin: 1em auto;
+  }
+
+  .radio-input {
+    display: flex;
+    flex-direction: row;
+    margin: 0.2em;
+  }
+
+  input[type='radio'] {
+    width: 3em;
+    height: 2em;
+  }
+
+  .number-input {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .counter-element {
+    margin: 0 auto 1em auto;
+  }
+
+  #reveal {
+    margin: 0 auto 2em auto;
+  }
+
+  button {
+    margin: 1.5em;
+  }
+}
