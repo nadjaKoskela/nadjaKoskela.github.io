@@ -7,19 +7,19 @@ let guessedNumber;
 let guessingCounter;
 
 const assignDifficulty = function () {
-  if (document.getElementById('difficulty-easy').checked) difficulty = 'easy';
-  if (document.getElementById('difficulty-medium').checked)
+  if (document.querySelector('#difficulty-easy').checked) difficulty = 'easy';
+  if (document.querySelector('#difficulty-medium').checked)
     difficulty = 'medium';
-  if (document.getElementById('difficulty-hard').checked) difficulty = 'hard';
+  if (document.querySelector('#difficulty-hard').checked) difficulty = 'hard';
 };
 
 const generateNumber = function () {
   if (difficulty === 'hard') {
-    secretNumber = Math.floor(Math.random() * 100) + 1;
+    secretNumber = Math.trunc(Math.random() * 100) + 1;
   } else if (difficulty === 'medium') {
-    secretNumber = Math.floor(Math.random() * 50) + 1;
+    secretNumber = Math.trunc(Math.random() * 50) + 1;
   } else {
-    secretNumber = Math.floor(Math.random() * 10) + 1;
+    secretNumber = Math.trunc(Math.random() * 10) + 1;
   }
 };
 
@@ -27,7 +27,7 @@ const startGame = function () {
   assignDifficulty();
   generateNumber();
   guessingCounter = 0;
-  document.getElementById('counter').innerText = '0';
+  document.querySelector('#counter').textContent = '0';
   let instructionsBetween;
   if (difficulty === 'hard') {
     instructionsBetween = '1 and 100';
@@ -36,16 +36,17 @@ const startGame = function () {
   } else {
     instructionsBetween = '1 and 10';
   }
-  document.getElementById(
-    'instructions'
+  document.querySelector(
+    '#instructions'
   ).innerText = `Guess the number between ${instructionsBetween}!`;
-  document.getElementById('number').value = '';
-  document.getElementById('guess').disabled = false;
-  document.getElementById('number').disabled = false;
+  document.querySelector('#feedback').textContent = "Let's get started!";
+  document.querySelector('.number').value = '';
+  document.querySelector('.guess').disabled = false;
+  document.querySelector('.number').disabled = false;
 };
 
 const guessTheNumber = function () {
-  guessedNumber = document.getElementById('number').value;
+  guessedNumber = document.querySelector('.number').value;
   let feedbackMessage;
   if (guessedNumber > secretNumber) {
     feedbackMessage =
@@ -56,17 +57,17 @@ const guessTheNumber = function () {
   } else {
     feedbackMessage = 'Congratulations! You guessed correctly!';
   }
-  document.getElementById('feedback').innerText = feedbackMessage;
+  document.querySelector('#feedback').textContent = feedbackMessage;
   guessingCounter++;
-  document.getElementById('counter').innerText = guessingCounter;
+  document.querySelector('#counter').textContent = guessingCounter;
 };
 
 const giveUp = function () {
-  document.getElementById(
-    'feedback'
+  document.querySelector(
+    '#feedback'
   ).innerText = `Oh no. You gave up. The number would have been ${secretNumber}. Give it another try!!`;
-  document.getElementById('guess').disabled = true;
-  document.getElementById('number').disabled = true;
+  document.querySelector('.guess').disabled = true;
+  document.querySelector('.number').disabled = true;
 };
 
 const emptyInput = function () {
@@ -74,3 +75,19 @@ const emptyInput = function () {
 };
 
 document.addEventListener('DOMContentLoaded', startGame());
+document
+  .querySelector('.choose-difficulty')
+  .addEventListener('click', function () {
+    startGame();
+  });
+document.querySelector('.start').addEventListener('click', function () {
+  startGame();
+});
+
+document.querySelector('.guess').addEventListener('click', function () {
+  guessTheNumber();
+});
+
+document.querySelector('.reveal').addEventListener('click', function () {
+  giveUp();
+});
