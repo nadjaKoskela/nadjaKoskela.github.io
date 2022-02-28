@@ -7,15 +7,15 @@ permalink: /guess-the-number/
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" type="text/css" href="/style.css" />
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
   <title>Guess the Number - an easy and fun guessing game</title>
 </head>
 <body>
   <header>
     <h1>Guess the number</h1>
     <p>A fun and easy game where you – surprise, surprise – have to guess a number.</p>
-    <div class="choose-difficulty" onclick="startGame()">
+    <div class="choose-difficulty">
       <div class="radio-input">
         <input
         type="radio"
@@ -42,7 +42,7 @@ permalink: /guess-the-number/
       /><label for="difficulty-hard">Hard</label>
     </div>
     </div>
-    <button class="button-grey" id="start" onclick="startGame()">
+    <button class="button-grey start">
       Start a new game
     </button>
   </header>
@@ -50,8 +50,8 @@ permalink: /guess-the-number/
     <section class="guess-number">
       <p id="instructions">Guess the number between 1 and 10</p>
       <div class="number-input">
-        <input type="number" id="number" onfocus="this.value =''"/>
-        <button class="button-purple" id="guess" onClick="guessTheNumber()">
+        <input type="number" class="number" onfocus="this.value =''"/>
+        <button class="button-purple guess">
           Guess
         </button>
       </div>
@@ -62,11 +62,11 @@ permalink: /guess-the-number/
         <p id="counter-label">Your guesses:</p>
         <p id="counter">666</p>
       </div>
-      <button class="button-lightpurple" id="reveal" onclick="giveUp()">I give up</button>
+      <button class="button-lightpurple reveal">I give up</button>
     </section>
   </main>
   <footer>
     <p>&#169 Nadja Koskela 2022</p>
   </footer>
 </body>
-<script src="/script.js"></script>
+<script src="script.js"></script>
