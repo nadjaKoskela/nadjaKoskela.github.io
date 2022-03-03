@@ -80,14 +80,9 @@ document
   .addEventListener('click', function () {
     startGame();
   });
-document.querySelector('.start').addEventListener('click', function () {
-  startGame();
-});
 
-document.querySelector('.guess').addEventListener('click', function () {
-  guessTheNumber();
-});
+document.querySelector('.start').addEventListener('click', startGame);
 
-document.querySelector('.reveal').addEventListener('click', function () {
-  giveUp();
-});
+document.querySelector('.guess').addEventListener('click', guessTheNumber);
+
+document.querySelector('.reveal').addEventListener('click', giveUp);
